@@ -1,0 +1,10 @@
+---
+- name: Installing system utilities
+  apt:
+    name:
+      - htop
+      - git
+      - ranger
+      - neovim
+      - build-essential
+  become: true

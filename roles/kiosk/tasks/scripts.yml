@@ -1,0 +1,22 @@
+- name: Creating scripts directory
+  file:
+    path: /home/{{ username }}/.local/scripts
+    state: directory
+  become_user: "{{ username }}"
+
+- name: Copying the scripts in the scripts directory
+  copy: 
+    src: "{{ item }}"
+    dest: /home/{{ username }}/.local/scripts/
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: '0755'
+  with_fileglob:
+    - "../files/scripts/*"
+  become_user: "{{ username }}"
+
+- name: Adding script dir to path
+  lineinfile:
+    path: /home/{{ username }}/.bashrc
+    line: export PATH="$PATH:$SCRIPTDIR"
+  become_user: "{{ username }}"

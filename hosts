@@ -1,0 +1,8 @@
+[all:vars]
+ansible_become_method=sudo
+
+[kiosks]
+192.168.1.105
+
+[kiosks:vars]
+ansible_python_interpreter=/usr/bin/python3

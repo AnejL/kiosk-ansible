@@ -1,0 +1,6 @@
+- name: Install network components
+  apt:
+    name:
+      - net-tools
+      - tcpdump
+  become: true

@@ -1,0 +1,17 @@
+- name: Screen rotation setup
+  lineinfile:
+    line: display_rotate=1
+    file: /boot/config.txt
+  become: true
+
+- name: Making config directory
+  file:
+    path: /etc/X11/xorg.conf.d
+    state: directory
+  become: true
+
+- name: Moving the touchscreen config
+  copy: 
+    src: ../files/configs/40-libinput.conf
+    dest: /etc/X11/xorg.conf.d/40-libinput.conf
+  become: true

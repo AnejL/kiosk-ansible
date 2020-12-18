@@ -1,0 +1,8 @@
+---
+- hosts: kiosks 
+  become: true
+  roles:
+    - base
+    - kiosk
+  vars:
+      username: pi

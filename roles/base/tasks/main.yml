@@ -1,0 +1,5 @@
+---
+# update apt packages and install system utilities
+- import_tasks: apt.yml
+- import_tasks: utilities.yml
+- import_tasks: network.yml
