@@ -1,0 +1,15 @@
+- name: Copying over xinitrc
+  file:
+    src: ../files/.xinitrc
+    dest: /home/{{ username }}/.xinitrc
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    force: yes
+
+- name: Copying over bash_profile
+  file:
+    src: ../files/.profile
+    dest: /home/{{ username }}/.profile
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    force: yes

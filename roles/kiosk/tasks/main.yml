@@ -1,4 +1,6 @@
 ---
-- import_tasks: scripts.yml
 - import_tasks: configs.yml
+- import_tasks: startup.yml
+- import_tasks: utilities.yml
 - import_tasks: browser.yml
+- import_tasks: workspace.yml

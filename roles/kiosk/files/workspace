@@ -1,0 +1,15 @@
+#!/bin/bash
+
+KEYBOARDID=$(DISPLAY=:0 xdotool search --onlyvisible --name "keyboard")
+CHROMIUMID=$(DISPLAY=:0 xdotool search --onlyvisible --class "chromium-browser")
+
+echo $KEYBOARDID
+echo $CHROMIUMID
+
+RESOLUTION="1920x1080"
+
+DISPLAY=:0 xdotool windowsize $CHROMIUMID 1080 1440
+DISPLAY=:0 xdotool windowsize $KEYBOARDID 720 360
+
+DISPLAY=:0 xdotool windowmove $CHROMIUMID 0 0
+DISPLAY=:0 xdotool windowmove $KEYBOARDID 180 1440

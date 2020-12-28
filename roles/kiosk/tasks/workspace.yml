@@ -1,0 +1,7 @@
+- name: Copying over workspace formatting script
+  file:
+    src: ../files/workspace
+    dest: /home/{{ username }}/workspace
+    mode: '0755'
+    owner: "{{ username }}"
+    group: "{{ username }}"

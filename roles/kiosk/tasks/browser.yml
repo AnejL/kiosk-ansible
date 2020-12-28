@@ -1,12 +1,6 @@
-- name: Installing Chromium browser and utils
+- name: Installing Chromium browser 
   apt:
     name: 
-      - xserver-xorg-video-all
-      - xserver-xorg-input-all
-      - xserver-xorg-core
-      - xinit 
-      - x11-xserver-utils 
       - chromium-browser
-      - unclutter
     update_cache: yes
   become: true

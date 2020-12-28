@@ -1,0 +1,12 @@
+- name: Installing extra programs and utilities
+  apt:
+    name: 
+      - xserver-xorg-video-all
+      - xserver-xorg-input-all
+      - xserver-xorg-core
+      - xinit 
+      - x11-xserver-utils 
+      - matchbox-keyboard
+      - unclutter
+    update_cache: yes
+  become: true
