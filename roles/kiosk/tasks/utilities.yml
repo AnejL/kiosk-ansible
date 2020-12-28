@@ -5,6 +5,7 @@
       - xserver-xorg-input-all
       - xserver-xorg-core
       - xinit 
+      - xdotool
       - x11-xserver-utils 
       - matchbox-keyboard
       - unclutter

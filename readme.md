@@ -110,4 +110,6 @@ When updating the system
 
 > ansible-playbook -k update.yml
 
+Reboot
 
+> reboot

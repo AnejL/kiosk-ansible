@@ -1,26 +1,26 @@
 - name: Screen rotation setup
   lineinfile:
     line: display_rotate=1
-    file: /boot/config.txt
+    path: /boot/config.txt
   become: true
   
 - name: Disable margins
   lineinfile:
     line: disable_overscan=1
-    file: /boot/config.txt
+    path: /boot/config.txt
   become: true
   
 - name: Reset GPU memory settings
   lineinfile:
     line: gpu_mem=64
-    file: /boot/config.txt
+    path: /boot/config.txt
     state: absent
   become: true
 
 - name: GPU memory set to 128
   lineinfile:
     line: gpu_mem=128
-    file: /boot/config.txt
+    path: /boot/config.txt
   become: true
 
 - name: Making config directory
