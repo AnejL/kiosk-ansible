@@ -3,6 +3,7 @@
   apt:
     name:
       - htop
+      - vim
       - git
       - ranger
       - neovim

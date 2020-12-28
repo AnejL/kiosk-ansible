@@ -1,14 +1,27 @@
 # ConnectLife kiosk installation and maintainance playbook
 
-Setup kiosk steps:
+Kiosk setup steps:
 
-### Connect RPi to a network via ethernet or WiFi
+### Prepare your Raspberry Pi for installation
 
-#### Ethernet
+After logging in to your Pi, run the following command to configure keyboard for your language.
+
+> sudo dpkg-reconfigure keyboard-configuration
+
+If you want to connect your Pi to WiFi set WLAN Country by executing:
+
+> sudo raspi-config
+
+And navigating to Localisation Options > WLAN Country and setting your country.
+
+
+#### Connect RPi to a network via ethernet or WiFi
+
+##### Ethernet
 
 Just plug in the cable.
 
-#### WiFi
+##### WiFi
 
 Add your wireless network SSID and password to **/etc/wpa\_supplicant/wpa\_supplicant.conf**
 
@@ -17,8 +30,11 @@ Add your wireless network SSID and password to **/etc/wpa\_supplicant/wpa\_suppl
 Add following section
 
 > network={
+
 > ssid="NETWORKNAME"
+
 > psk="YOURPASSWORD"
+
 > }
 
 Then execute the following command to connect to the specified network.
@@ -46,6 +62,7 @@ Execute following command to get the IP address
 ### Enable and start SSH on Raspberry Pi
 
 > sudo systemctl enable ssh
+
 > sudo systemctl start ssh
 
 This will open up SSH on port 22.

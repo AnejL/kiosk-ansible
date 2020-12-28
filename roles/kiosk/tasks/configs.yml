@@ -4,6 +4,12 @@
     file: /boot/config.txt
   become: true
   
+- name: Disable margins
+  lineinfile:
+    line: disable_overscan=1
+    file: /boot/config.txt
+  become: true
+  
 - name: Reset GPU memory settings
   lineinfile:
     line: gpu_mem=64
