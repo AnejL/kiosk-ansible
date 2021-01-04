@@ -53,11 +53,12 @@ Execute following command to get the IP address
 
 #### Ethernet
 
-![Eth] (https://github.com/anejl/kiosk-ansible/blob/master/misc/ipeth.png )
+![image info](./misc/ipeth.png)
 
 #### WiFi
 
-![WiFi] (https://github.com/anejl/kiosk-ansible/blob/master/misc/ipwifi.png)
+
+![image info](./misc/ipwifi.png)
 
 ### Enable and start SSH on Raspberry Pi
 
