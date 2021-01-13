@@ -5,7 +5,7 @@
 # global xinitrc file, used by all X sessions started by xinit (startx)
 
 # razporedi okna po ekranu
-sleep 5 && ./workspace & 
+sleep 10 && ./workspace & 
 unclutter -idle 0.01 -root &
 
 # ozadje belo

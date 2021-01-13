@@ -1,0 +1,33 @@
+---
+- name: Installing breeze GTK icon theme and cursor theme
+  apt:
+    name: 
+      - breeze-icon-theme
+      - breeze-cursor-theme
+      - lxappearance
+    update_cache: yes
+  become: true
+
+- name: creating GTK-2.0 config directory
+  file:
+    path: /home/{{ username }}/.config/gtk-2.0
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: creating GTK-3.0 config directory
+  file:
+    path: /home/{{ username }}/.config/gtk-3.0
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: copying over the gtk2 config
+  copy:
+      src: ../files/theming/gtk-2.0/gtkfilechooser.ini
+      dest: /home/{{ username }}/.config/gtk-2.0/gtkfilechooser.ini
+
+- name: copying over the GTK-3.0 config
+  copy:
+      src: ../files/theming/gtk-3.0/settings.ini
+      dest: /home/{{ username }}/.config/gtk-3.0/settings.ini

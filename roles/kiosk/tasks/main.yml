@@ -4,3 +4,4 @@
 - import_tasks: utilities.yml
 - import_tasks: browser.yml
 - import_tasks: workspace.yml
+- import_tasks: theming.yml
