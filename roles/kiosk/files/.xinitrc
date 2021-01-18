@@ -6,7 +6,7 @@
 
 # razporedi okna po ekranu
 sleep 10 && ./workspace & 
-unclutter -idle 0.01 -root &
+# unclutter -idle 0 -root &
 
 # ozadje belo
 xsetroot -solid whitesmoke
