@@ -1,0 +1,22 @@
+#!/bin/sh
+quit () {
+	exit;
+}
+
+[ ! $# -eq 2 ] && echo "USAGE: etcher [path to OS image] [sd card]" && \
+	echo && echo "get sd card using \"lsblk\" command (usually /dev/mmcblk0)" && echo
+
+IMG=$1
+[ ! -f "$IMG" ] && echo "please specify a valid image as the first argument" && quit
+
+BASE=$(basename $IMG)
+DIRNAME=$(dirname $IMG)
+EXT="${BASE##*.}"
+FILENAME="${BASE%.*}"
+
+DEST=$2
+[ ! -b "$DEST" ] && echo "please specify a valid disk as second argument. usually /dev/mmcblk0." && quit
+
+[ "$EXT" = "gz" ] && echo "execute: cd $DIRNAME && gzip -k -d $BASE" && quit
+
+echo "dd if=$IMG of=$DEST bs=4M status=progress"
