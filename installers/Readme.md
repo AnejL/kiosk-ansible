@@ -2,6 +2,12 @@
 
 The script flashes spefied IMG file to a specified SD card (or other disk device).
 
+Usage: 
+
+> ./etcher /home/user/Downloads/pi-latest.img /dev/mmcblk0
+
+# Details 
+
 The script takes two arguments
 
 1. Path to the disk image
@@ -12,6 +18,3 @@ The script takes two arguments
 	1. e.g. /dev/mmcblk0
 	1. e.g. /dev/sda
 
-Usage: 
-
-> ./etcher /home/user/Downloads/pi-latest.img /dev/mmcblk0
